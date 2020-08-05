@@ -9,3 +9,15 @@ jobs:
       - uses: ./action-a
         with:
           MY_NAME: "Mona"
+---
+name: A workflow similar to previous one
+on: push
+jobs:
+  build:
+    name: Hello world action
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: ./action-a
+        with:
+          MY_NAME: "New MONA"
